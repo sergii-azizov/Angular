@@ -68,6 +68,8 @@
     "no-input-rename": true,
     "no-output-rename": true,
     "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "whitespace": [true, "check-module"],
+    "object-curly-spacing": true
   }
 }

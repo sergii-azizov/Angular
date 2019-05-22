@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'AppComponent',
+  selector: 'PageNotFoundComponent',
   templateUrl: './component.html',
   styleUrls: ['./component.scss']
 })
-export class AppComponent {
-  title = 'angular';
-}
+export default class {}

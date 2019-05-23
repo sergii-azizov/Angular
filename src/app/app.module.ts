@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
-
-import { HomePageComponent } from './features';
-import { BasePageComponent, PageNotFoundComponent } from './core/pages';
+import { HttpService, HttpInterceptorService } from './services';
+import { BasePageComponent, HomePageComponent, PageNotFoundComponent } from './pages';
 
 @NgModule({
   declarations: [
@@ -17,9 +17,13 @@ import { BasePageComponent, PageNotFoundComponent } from './core/pages';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export default class {

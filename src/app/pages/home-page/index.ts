@@ -1,1 +1,2 @@
-export { default as HomePageComponent } from './component';
+export { HomePageComponent } from './component';
+export { HomePageModule } from './module';

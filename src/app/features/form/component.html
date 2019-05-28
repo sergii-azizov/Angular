@@ -1,0 +1,21 @@
+<form novalidate [formGroup]="sarhanForm" (ngSubmit)="submit($event, sarhanForm)">
+    User Name: <input type="text" formControlName="sarhanInput">
+  <div *ngIf="isSubmitted && sarhanForm.get('sarhanInput').errors?.required">required</div>
+    <fieldset formGroupName="sarhanAddress">
+      Country: <input type="text" formControlName="sarhanCountry">
+      City: <input type="text" formControlName="sarhanCity">
+    </fieldset>
+
+  <fieldset formArrayName="sarhanContacts">
+    <div *ngFor="let contact of sarhanForm.get('sarhanContacts').controls; let i = index;">
+      Contacts:
+      <select [formControl]="contact.controls['type']">
+        <option *ngFor="let opt of contactTypes" [value]="opt.value">{{opt.title}}</option>
+      </select>
+      <input type="text" [formControl]="contact.controls['value']">
+      <button type="button" (click)="removeContact(i);">remove contact</button>
+    </div>
+  </fieldset>
+  <button type="button" (click)="addContact();">add contact</button>
+  <button>submit</button>
+</form>

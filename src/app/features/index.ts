@@ -1,0 +1,1 @@
+export { SarhanFormComponent } from './form';

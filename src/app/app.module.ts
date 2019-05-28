@@ -6,19 +6,20 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { HttpService, HttpInterceptorService } from './services';
-import { BasePageComponent, HomePageComponent, PageNotFoundComponent } from './pages';
+import { BasePageComponent, HomePageComponent, HomePageModule, PageNotFoundComponent } from './pages';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    HomePageModule
+  ],
   declarations: [
     AppComponent,
     HomePageComponent,
     PageNotFoundComponent,
     BasePageComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule
   ],
   providers: [
     HttpService,

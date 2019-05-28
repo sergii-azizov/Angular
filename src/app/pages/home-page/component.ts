@@ -8,9 +8,9 @@ import { HttpParams } from '@angular/common/http';
   templateUrl: './component.html',
   styleUrls: ['./component.scss']
 })
-export default class {
+export class HomePageComponent {
   constructor(private http: HttpService) {
-    const request = this.http.get('/public-api/users', {
+    /*const request = this.http.get('/public-api/users', {
       params: new HttpParams({
         fromObject: {
           _format: 'json',
@@ -19,7 +19,7 @@ export default class {
       })
     }).subscribe(data => {
       console.log('==>', data);
-    });
+    });*/
 
     //request.unsubscribe();
   }

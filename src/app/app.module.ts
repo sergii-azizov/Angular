@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { HttpService, HttpInterceptorService } from './services';
 import { BasePageComponent, HomePageComponent, HomePageModule, PageNotFoundComponent } from './pages';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    HomePageModule
+    HomePageModule,
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   declarations: [
     AppComponent,

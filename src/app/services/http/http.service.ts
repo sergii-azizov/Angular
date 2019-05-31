@@ -12,19 +12,19 @@ export class HttpService {
 
   public constructor(private http: HttpClient) {}
 
-  public get(url: string, options?: RequestOptions): Observable<object> {
+  public get(url: string, options?: RequestOptions): Observable<any> {
     return this.http.get(this.domain + url, options);
   }
 
-  public post(url: string, params: object, options?: RequestOptions): Observable<object> {
+  public post(url: string, params: object, options?: RequestOptions): Observable<any> {
     return this.http.post(this.domain + url, params, options);
   }
 
-  public put(url: string, params: object, options?: RequestOptions): Observable<object> {
+  public put(url: string, params: object, options?: RequestOptions): Observable<any> {
     return this.http.put(this.domain + url, params, options);
   }
 
-  public delete(url: string, options?: RequestOptions): Observable<object> {
+  public delete(url: string, options?: RequestOptions): Observable<any> {
     return this.http.delete(this.domain + url, options);
   }
 }
